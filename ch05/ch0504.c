@@ -9,18 +9,21 @@
  * 4. should use function like is_prime(int n).
 */
 int main(){
-  int number=0;
+  int number = 0;
   printf("Please input the number.");
-  scanf("%d",&number);
-  if(number<2||number>100000){
+  scanf("%d", &number);
+  if (number<2 || number>100000){
     printf("err");
     // bp: here can return directly, avoid too many level of {}.
-  }else{
+    return 1;
+  }
+  // else{
     printf("%d=",number);
     int divisor=number;
     int i=2;
     int Prime=1;
     // bp: check number is prime self.
+    // or first one.
     for(i=2;i<number;i++)
     {
       if(divisor%i==0)
@@ -38,15 +41,15 @@ int main(){
       i=2;
       while(i<=number)
       {
-        if(divisor%i==0)
+        if(divisor%i == 0)
         {
-          divisor/=i;
+          divisor /= i;
           printf("x%d",i);
         }else{
-        i++; 
+          i++; 
         }
       }
     }
-  }
+  // }
   return 0;
 }
