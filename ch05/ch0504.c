@@ -16,6 +16,7 @@ int main(){
     printf("err");
     // bp: here can return directly, avoid too many level of {}.
     return 1;
+    //
   }
   // else{
     printf("%d=",number);
