@@ -3,7 +3,7 @@
 int main()
 {
   int start=0;
-  int end=0;
+  int end=2;
   int count=1;
   int i=2;
   int x=3;
