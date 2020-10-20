@@ -26,7 +26,10 @@ int movetow(char height,char from,char to,char using){
 
 
 int main(int argc, char *argv[]){
-  int total = 4;
+  int total = 64;
+  // printf("Input\n");
+  // scanf("%d",&total);
+  // int total = 4;
   // total = atoi (argv[1]);
   printf("disk_numberfrom_rodto_rod:\n");
   movetow(total,'A','C','B');

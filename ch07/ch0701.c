@@ -5,5 +5,6 @@ int main(void){
   int *p = &a[5];
   //int i;
   //scanf("%d",&i);
-  printf("%d",p[-2]);
-}
+  printf("%d\n",p[-2]);
+  printf("%d",sizeof(int))
+;}
