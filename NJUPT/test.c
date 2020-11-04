@@ -3,14 +3,10 @@
 */
 
 # include <stdio.h>
-# include <stdlib.h>
 
 int main( int argc, int const *argv[] ){
-  double i = 1.144;
-  double square = 6;
-  while(i < square){
-      i++;
-      printf("i=%f\n",i);
-  }
+  int a = 3, b = 2;
+  double i = (a + b) / 2;
+  printf("%f",i);
   return 0;
 }

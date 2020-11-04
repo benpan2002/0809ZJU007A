@@ -40,55 +40,55 @@ int main()
   printf("\n sum is %d \n",sum);
   return 0;
 }
-int main222()
-{
-  int n=0;
-  int m=0;
-  printf("Please edit two numbers.");
-  scanf("%d %d",&n,&m);
-  if(0<n&&n<=m&&m<=200)
-  {
-    int i=2;
-    int x=3;
-    int count=1;
-    int prime=1;
-    while(count<n)
-    {
-      for(i=2;i<x;i++)
-      {
-        if(x%i==0)
-        {
-          prime=0;
-        }
-      }
-      if(prime==1)
-      {count++;}
-      x++;
-      i=2;
-      prime=1;
-    }
+// int main222()
+// {
+//   int n=0;
+//   int m=0;
+//   printf("Please edit two numbers.");
+//   scanf("%d %d",&n,&m);
+//   if(0<n&&n<=m&&m<=200)
+//   {
+//     int i=2;
+//     int x=3;
+//     int count=1;
+//     int prime=1;
+//     while(count<n)
+//     {
+//       for(i=2;i<x;i++)
+//       {
+//         if(x%i==0)
+//         {
+//           prime=0;
+//         }
+//       }
+//       if(prime==1)
+//       {count++;}
+//       x++;
+//       i=2;
+//       prime=1;
+//     }
     
-    x--;
-    count--;
-    int numberN=x;
-    int sum=0;
-    while(count<m)
-    {
-      for(i=2;i<x;i++)
-      {
-        if(x%i==0)
-        {prime=0;}
-      }
-      if(prime==1)
-      {
-        count++;
-        sum+=x;
-      }
-      x++;
-      i=2;
-      prime=1;
-    }
-    printf("%d",sum);
-  }
-  else{printf("Sorry.");}
-}
+//     x--;
+//     count--;
+//     int numberN=x;
+//     int sum=0;
+//     while(count<m)
+//     {
+//       for(i=2;i<x;i++)
+//       {
+//         if(x%i==0)
+//         {prime=0;}
+//       }
+//       if(prime==1)
+//       {
+//         count++;
+//         sum+=x;
+//       }
+//       x++;
+//       i=2;
+//       prime=1;
+//     }
+//     printf("%d",sum);
+//   }
+//   else{printf("Sorry.");}
+// }
