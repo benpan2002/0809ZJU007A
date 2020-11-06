@@ -1,6 +1,6 @@
 //work out a function to output the larger number
 
-# include <stdio.h>
+#include <stdio.h>
 
 int comparation(int *a, int *b){
   int max;

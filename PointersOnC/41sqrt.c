@@ -25,5 +25,4 @@ int main(int argc, const int *argv[]){
   }
   printf("The square root = %.3f",root);
   return EXIT_SUCCESS;
-  return 0;
 }

@@ -3,7 +3,7 @@
 **This is for the first question
 */
 
-# include <stdio.h>
+#include <stdio.h>
 
 int main( int argc, char const *argv[] ){
   int num = 0, a = 0, sum = 0; 
@@ -11,16 +11,16 @@ int main( int argc, char const *argv[] ){
   printf("Please input an integer:\n");
   scanf("%d", &num);
   //range check
-  if( num < 0){
+  if ( num < 0 ){
     num = -num;
   }
   //calculation
-  while( num >= 10 ){
+  while ( num >= 10 ){
     a = num%10;
-    num/=10;
-    sum+=a;
+    num /= 10;
+    sum += a;
   }
-  sum+=num;
+  sum += num;
   printf("The answer is %d", sum);
   return 0;
 }
