@@ -7,13 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void matrix_multiply (int *m1, int *m2, int *r, int x, int y, int z );
+void matrix_plus (int *m1, int *m2, int *r, int x, int y, int z );
 
 void input_matrix ( int *m , int x, int y );
-
-int range_check ( int y, int y2);
-
-void matrix_output ( int *r, int x, int z );
 
 int main ( int argc, char const *argv[]) {
     int *m1, *m2, *r, x, y, y2, z, judge = 1;
@@ -28,12 +24,11 @@ int main ( int argc, char const *argv[]) {
     m1 = (int*)malloc(sizeof(int)*x*y);
     m2 = (int*)malloc(sizeof(int)*y*z);
     r = (int*)malloc(sizeof(int)*x*z);
-    printf("Please input the first matrix\n");
+    printf("Please input the first matrix\t");
     input_matrix(m1,x,y);
-    printf("Please input the second matrix\n");
+    printf("Please input the second matrix\t");
     input_matrix(m2,y,z);
     matrix_multiply(m1,m2,r,x,y,z);
-    matrix_output(r,x,z);
     free(m1);
     free(m2);
     free(r);
@@ -47,25 +42,19 @@ void input_matrix ( int *m, int x, int y ) {
     4 5 6
     7 8 9 
     */
-    int num = 0;
+    int row = 0;
+    int column = 0;
     int *mp;
-    mp = m;
-    for ( num = 0; num < (x*y); num++ ) {
-        scanf("%d",mp);
-        mp++;
+    for ( row = 0; row < x; row++ ) {
+        for ( column = 0; column < y; column++ ) {
+            mp = m + row*x + column;
+            // scanf("%d",mp);
+            *mp = 1;  // SEGMENTATION FAULT IN THIS STEP!
+        }
     }
 }
 
-int range_check ( int y, int y2 ) {
-    int judge = 1;
-    if (y != y2) {
-        judge = 0;
-        printf("err");
-        return judge;
-    }
-}
-
-void matrix_multiply (int *m1, int *m2, int *r, int x, int y, int z ) {
+void matrix_plus (int *m1, int *m2, int *r, int x, int y, int z ) {
     int *m1p;
     int *m2p;
     int k;
@@ -88,19 +77,3 @@ void matrix_multiply (int *m1, int *m2, int *r, int x, int y, int z ) {
     }
 }
 
-void matrix_output ( int *r, int x, int y ) {
-    int *rp;
-    int num;
-    int cnt = 0;
-    rp = r;
-    printf("The answer is\n");
-    for ( num = 0; num < (x*y); num++) {
-            printf("%5d ",*rp);
-            rp++;
-            cnt++;
-            if ( cnt == y ) {
-                printf("\n");
-                cnt = 0;
-            }
-        }
-    }

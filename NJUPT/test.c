@@ -6,11 +6,9 @@
 
 int main()
 
-{   int arr[3][5];
-
-
-            printf("%d",sizeof(arr[0][0]));
-
-    return 0;
+{   int a;
+    int *p = &a;
+    *p = 1;
+    printf("%d %d",a,*p);
 
 }
