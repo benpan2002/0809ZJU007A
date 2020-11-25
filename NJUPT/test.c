@@ -4,13 +4,13 @@
 
 #include <stdio.h>
 
-int  main(int argc, char const *argv[]) {
-    typedef struct {
-        int num;
-        char string;
-        int array[30];
-        int *p;
-    } Simple ;
+int main()
+
+{   int arr[3][5];
+
+
+            printf("%d",sizeof(arr[0][0]));
 
     return 0;
- }
+
+}
