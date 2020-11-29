@@ -7,31 +7,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void matrix_plus (int *m1, int *m2, int *r, int x, int y );
+void matrix_nummult (int *m, int *r, int num, int x, int y );
 
 void input_matrix ( int *m , int x, int y );
 
 void matrix_output ( int *r, int x, int z );
 
 int main ( int argc, char const *argv[]) {
-    int *m1, *m2, *r, x, y;
-    printf("Please input the matrixs' number of rows and number of columns\t");
+    int *m, *r, x, y, num;
+    printf("Please input the matrix's number of rows and number of columns\t");
     scanf("%d %d",&x,&y);
     if ( x < 1 || y < 1 ) {
-    printf("err");
-    return EXIT_FAILURE;
-}
-    m1 = (int*)malloc(sizeof(int)*x*y);
-    m2 = (int*)malloc(sizeof(int)*x*y);
+        printf("err");
+        return EXIT_FAILURE;
+    }
+    m = (int*)malloc(sizeof(int)*x*y);
     r = (int*)malloc(sizeof(int)*x*y);
-    printf("Please input the first matrix\n");
-    input_matrix(m1,x,y);
-    printf("Please input the second matrix\n");
-    input_matrix(m2,x,y);
-    matrix_plus(m1,m2,r,x,y);
+    printf("Please input the matrix\n");
+    input_matrix(m,x,y);
+    printf("Please input the number\t");
+    scanf("%d",&num);
+    matrix_nummult(m,r,num,x,y);
     matrix_output(r,x,y);
-    free(m1);
-    free(m2);
+    free(m);
     free(r);
     return EXIT_SUCCESS; 
 }
@@ -52,22 +50,18 @@ void input_matrix ( int *m, int x, int y ) {
     }
 }
 
-void matrix_plus (int *m1, int *m2, int *r, int x, int y ) {
-    int *m1p;
-    int *m2p;
+void matrix_nummult (int *m, int *r, int num, int x, int y ) {
+    int *mp;
     int *rp;
-    int num;
+    int cnt;
 
-    m1p = m1;
-    m2p = m2;
+    mp = m;
     rp = r;
 
-
-    for ( num = 0; num < (x*y); num++ ) {
-        *r = *m1p + *m2p;
+    for ( cnt = 0; cnt < (x*y); cnt++ ) {
+        *r = *mp * num;
         r++;
-        m1p++;
-        m2p++;
+        mp++;
     }
 }
 
